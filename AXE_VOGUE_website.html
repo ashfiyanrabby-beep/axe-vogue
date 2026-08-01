@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AXE VOGUE — Men's & Boys Fashion</title>
+<style>
+:root{--black:#111;--gold:#c9a227;--cream:#f7f5ef;--muted:#666;--white:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff}
+a{text-decoration:none;color:inherit}.top{background:var(--black);color:#fff;text-align:center;padding:9px;font-size:12px;letter-spacing:1px}
+header{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #eee}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+.logo{font-weight:900;letter-spacing:3px;font-size:23px}.logo span{color:var(--gold)}
+nav a{margin:0 12px;font-size:13px;font-weight:700;letter-spacing:.8px}
+.cart{border:1px solid #ddd;border-radius:20px;padding:9px 14px;font-size:13px;font-weight:700}
+.hero{background:linear-gradient(100deg,#111 0%,#252525 55%,#555 100%);color:#fff;min-height:540px;display:flex;align-items:center}
+.hero-inner{max-width:1180px;width:100%;margin:auto;padding:60px 20px}
+.kicker{color:#d9bb52;letter-spacing:4px;font-size:12px;font-weight:700}.hero h1{font-size:clamp(42px,7vw,78px);line-height:.95;margin:16px 0}.hero p{color:#ddd;max-width:500px;line-height:1.7}
+.btn{display:inline-block;background:var(--gold);color:#111;border:0;padding:14px 23px;font-weight:800;letter-spacing:1px;cursor:pointer;border-radius:2px}
+.section{max-width:1180px;margin:auto;padding:70px 20px}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}
+.section h2{margin:0;font-size:32px}.sub{color:var(--muted);font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cat{min-height:180px;background:var(--cream);display:flex;align-items:end;padding:24px;font-size:24px;font-weight:900}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{border:1px solid #eee;background:#fff}.photo{height:270px;background:linear-gradient(135deg,#eee,#cfcfcf);display:flex;align-items:center;justify-content:center;color:#777;font-weight:700;letter-spacing:1px}.info{padding:16px}.info h3{margin:0 0 7px;font-size:16px}.price{font-weight:800;margin-bottom:10px}.sizes{font-size:12px;color:#777;margin-bottom:13px}.order{width:100%;padding:11px;background:#111;color:#fff;border:0;cursor:pointer;font-weight:700}
+.banner{background:var(--black);color:#fff;text-align:center;padding:55px 20px}.banner h2{font-size:34px;margin:0 0 10px}.banner p{color:#ccc}
+footer{background:#0b0b0b;color:#fff;padding:45px 20px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:30px}.foot p{color:#aaa;font-size:13px;line-height:1.7}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:30;align-items:center;justify-content:center;padding:18px}.box{background:#fff;max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:25px}.box h2{margin-top:0}.close{float:right;border:0;background:none;font-size:24px;cursor:pointer}
+input,select,textarea{width:100%;padding:12px;margin:7px 0 13px;border:1px solid #ddd}.pay{border:1px solid #ddd;padding:12px;margin:8px 0}.pay input{width:auto;margin-right:8px}.cartline{display:flex;justify-content:space-between;border-bottom:1px solid #eee;padding:10px 0;font-size:14px}
+@media(max-width:800px){nav{display:none}.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:1fr}.photo{height:220px}.foot{flex-direction:column}}
+@media(max-width:480px){.products{grid-template-columns:1fr}.hero{min-height:470px}.section{padding:48px 16px}}
+</style>
+</head>
+<body>
+<div class="top">WELCOME TO AXE VOGUE • MEN'S & BOYS FASHION</div>
+<header><div class="nav">
+  <div class="logo">AXE <span>VOGUE</span></div>
+  <nav><a href="#shop">SHOP</a><a href="#categories">CATEGORIES</a><a href="#new">NEW COLLECTION</a><a href="#contact">CONTACT</a></nav>
+  <button class="cart" onclick="openCart()">CART (<span id="count">0</span>)</button>
+</div></header>
+
+<section class="hero"><div class="hero-inner">
+  <div class="kicker">NEW COLLECTION 2026</div>
+  <h1>STYLE<br>YOUR WAY.</h1>
+  <p>Premium men's and boys' shirts & pants designed for everyday confidence.</p>
+  <a class="btn" href="#shop">SHOP NOW</a>
+</div></section>
+
+<section class="section" id="categories">
+  <div class="section-head"><div><h2>Shop by Category</h2><div class="sub">Find your everyday essentials.</div></div></div>
+  <div class="categories">
+    <a class="cat" href="#shop">SHIRTS →</a><a class="cat" href="#shop">PANTS →</a><a class="cat" href="#new">NEW ARRIVALS →</a>
+  </div>
+</section>
+
+<section class="section" id="shop">
+  <div class="section-head"><div><h2>Featured Collection</h2><div class="sub">Replace these demo products with your real products.</div></div></div>
+  <div class="products" id="products"></div>
+</section>
+
+<section class="banner"><h2>LOOK GOOD. FEEL CONFIDENT.</h2><p>Easy ordering • Cash on Delivery • bKash • Nagad</p></section>
+
+<section class="section" id="contact">
+  <h2>Contact AXE VOGUE</h2>
+  <p class="sub">Phone: +880 1XXXXXXXXX &nbsp; | &nbsp; Facebook: AXE VOGUE</p>
+</section>
+
+<footer><div class="foot"><div><div class="logo">AXE <span>VOGUE</span></div><p>Men's & Boys Fashion<br>Quality. Style. Confidence.</p></div><div><strong>ORDERING</strong><p>bKash • Nagad • Cash on Delivery<br>Fast local delivery</p></div></div></footer>
+
+<div class="modal" id="cartModal"><div class="box"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="cartItems"></div><p><strong>Total: ৳<span id="total">0</span></strong></p><button class="btn" onclick="openCheckout()">CHECKOUT</button></div></div>
+
+<div class="modal" id="checkoutModal"><div class="box"><button class="close" onclick="closeCheckout()">×</button><h2>Checkout</h2><div id="checkoutSummary"></div>
+<form onsubmit="placeOrder(event)">
+<label>Full Name</label><input required id="name" placeholder="Your name">
+<label>Phone</label><input required id="phone" placeholder="01XXXXXXXXX">
+<label>Delivery Address</label><textarea required id="address" rows="3" placeholder="Full address"></textarea>
+<label>Payment Method</label>
+<div class="pay"><input type="radio" name="payment" value="bKash" checked> bKash</div>
+<div class="pay"><input type="radio" name="payment" value="Nagad"> Nagad</div>
+<div class="pay"><input type="radio" name="payment" value="Cash on Delivery"> Cash on Delivery</div>
+<p style="font-size:12px;color:#777">Demo checkout: connect a verified payment gateway before accepting live payments.</p>
+<button class="btn" type="submit">PLACE ORDER</button>
+</form></div></div>
+
+<script>
+const products=[
+{name:"Classic Black Shirt",price:850,type:"SHIRT",sizes:"M / L / XL / XXL"},
+{name:"Premium White Shirt",price:900,type:"SHIRT",sizes:"M / L / XL / XXL"},
+{name:"Slim Fit Black Pant",price:1200,type:"PANT",sizes:"30 / 32 / 34 / 36"},
+{name:"Classic Navy Pant",price:1250,type:"PANT",sizes:"30 / 32 / 34 / 36"}
+];
+let cart=[];
+function renderProducts(){document.getElementById('products').innerHTML=products.map((p,i)=>`
+<div class="card"><div class="photo">${p.type}<br>PRODUCT PHOTO</div><div class="info"><h3>${p.name}</h3><div class="price">৳${p.price}</div><div class="sizes">Size: ${p.sizes}</div><button class="order" onclick="add(${i})">ADD TO CART</button></div></div>`).join('')}
+function add(i){cart.push(products[i]);update();openCart()}
+function update(){document.getElementById('count').textContent=cart.length}
+function openCart(){document.getElementById('cartModal').style.display='flex';document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<div class="cartline"><span>${p.name}</span><span>৳${p.price} <button onclick="removeItem(${i})">×</button></span></div>`).join(''):'<p>Your cart is empty.</p>';document.getElementById('total').textContent=cart.reduce((s,p)=>s+p.price,0)}
+function removeItem(i){cart.splice(i,1);update();openCart()}
+function closeCart(){document.getElementById('cartModal').style.display='none'}
+function openCheckout(){if(!cart.length)return alert('Please add a product first.');closeCart();document.getElementById('checkoutSummary').innerHTML='<p><strong>Order total: ৳'+cart.reduce((s,p)=>s+p.price,0)+'</strong></p>';document.getElementById('checkoutModal').style.display='flex'}
+function closeCheckout(){document.getElementById('checkoutModal').style.display='none'}
+function placeOrder(e){e.preventDefault();const pay=document.querySelector('input[name="payment"]:checked').value;alert('Thank you, '+document.getElementById('name').value+'! Your AXE VOGUE order request has been received. Payment: '+pay+'.');cart=[];update();closeCheckout()}
+renderProducts();
+</script>
+</body>
+</html>
